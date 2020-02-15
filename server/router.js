@@ -1,6 +1,10 @@
 // import express & express.router
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
+const path = require('path');
+// const controller = require('./controller');
+const contact = require('./contact');
 
 // test timelog function sends back time string
 var timeLog = (req, res) => {

@@ -1,0 +1,18 @@
+* REACT CONTACT SHEET PROJECT
+** Form to save contact info
+*** first name, last name, number
+*** add time record inserted into db
+*** use MERN stack
+** Sign in screen
+*** for admin
+*** be able to pull all info from db
+** on github
+** JAVASCRIPT BEST PRACTICES
+
+* TODO
+** send contact info to server
+*** store in json file
+** store info in db
+
+
+

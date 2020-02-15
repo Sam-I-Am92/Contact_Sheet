@@ -2,3 +2,4 @@ node_modules
 README.md
 ./client/dist/bundle.js
 ./coverage
+./contactsheet.org
