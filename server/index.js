@@ -23,9 +23,6 @@ db.once('open', () => {
   console.log('Connected to DB!');
 });
 
-// set port var
-const PORT = process.env.port || 3000;
-
 // allow cross-origin requests
 app.use(cors());
 
@@ -44,6 +41,6 @@ app.use('/contact', postContact);
 app.use('/admin', admin);
 
 // launch server and listen on specified port
-app.listen(PORT, () => {
-  console.log(`Express server listening on port ${PORT}!`);
+app.listen(process.env.PORT, () => {
+  console.log(`Express server listening on port ${process.env.PORT}!`);
 });
