@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 });
 
 // test get req for time
-router.get('/time', timeLog);
+router.get('/status', timeLog);
 
 // export router
 module.exports = router;

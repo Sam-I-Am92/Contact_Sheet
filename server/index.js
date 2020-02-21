@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const router = require('./router.js');
-const postContact = require('./contact');
-const admin = require('./admin');
+const router = require('./Routers/router.js');
+const postContact = require('./Controllers/contact');
+const admin = require('./Controllers/admin');
 const mongoose = require('mongoose');
 
 // initialise express
