@@ -26,7 +26,7 @@ class App extends React.Component {
 
   // get dummy response from server
   connectServer() {
-    Axios.get('/api/time')
+    Axios.get('/status/time')
       .then((res) => {
         // console log server response
         console.log('Server Response: ', res.data);

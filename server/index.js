@@ -3,16 +3,18 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const router = require('./Routers/router.js');
-const postContact = require('./Controllers/contact');
+const postContact = require('./Controllers/contact.js');
 const admin = require('./Controllers/admin');
 const mongoose = require('mongoose');
+
+require('dotenv').config();
 
 // initialise express
 const app = express();
 
 // create connection to db
 // mongoose.set('useUnifiedTopology', true);
-mongoose.connect('mongodb://localhost:27017/Contacts', { useNewUrlParser: true });
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
 
 // set connection var & define cb for connection
 const db = mongoose.connection;
@@ -33,13 +35,8 @@ app.use(bodyParser.json());
 // serve static files to browser
 app.use(express.static(path.join(__dirname, '../client/dist/')));
 
-// send test response from server
-app.get('/greeting', (req, res) => {
-  res.status(200).send('Hello from the server!');
-});
-
 // route all reqs for data to router file
-app.use('/api', router);
+app.use('/status', router);
 
 // route all reqs to /contact to contact file
 app.use('/contact', postContact);
