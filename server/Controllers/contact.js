@@ -1,6 +1,6 @@
 // import mongoose & contact model
 const mongoose = require('mongoose');
-const Contact = require('../../database/index');
+const Contact = require('../Models/contact.model');
   
 const postContact = (req, res) => {
   // post all contact info to db
