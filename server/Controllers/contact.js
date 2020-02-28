@@ -47,6 +47,7 @@ const saveContact = (req, res) => {
     })
     .catch((err) => {
       console.log('Error!', err);
+      res.status(400).send(err);
     });
 };
 
