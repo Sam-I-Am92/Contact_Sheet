@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
 const router = require('./Routers/router.js');
-const postContact = require('./Controllers/contact.js');
+const saveContact = require('./Controllers/contact.js');
 const admin = require('./Controllers/admin');
 const mongoose = require('mongoose');
 
@@ -16,6 +16,8 @@ const app = express();
 // mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
 
+// set mongoose promises to native promises
+mongoose.Promise = global.Promise;
 // set connection var & define cb for connection
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'DB Connection Failed!'));
@@ -36,7 +38,7 @@ app.use(express.static(path.join(__dirname, '../client/dist/')));
 app.use('/status', router);
 
 // route all reqs to /contact to contact file
-app.use('/contact', postContact);
+app.use('/contact', saveContact);
 
 app.use('/admin', admin);
 
